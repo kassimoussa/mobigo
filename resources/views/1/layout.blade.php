@@ -88,7 +88,7 @@ use Carbon\Carbon;
                         <span class="nav_name">Accueil</span>
                     </a> 
 
-                    <a href="{{ url('/medical') }}" class="nav_link  @if($pageSlug == "medical") activee @endif ">
+                    {{-- <a href="{{ url('/medical') }}" class="nav_link  @if($pageSlug == "medical") activee @endif ">
                         <i class='fa-solid fa-house-medical nav_icon' data-bs-toggle="tooltip" data-bs-placement="right"
                         title="Médical"></i>
                         <span class="nav_name">Médical</span>
@@ -112,7 +112,7 @@ use Carbon\Carbon;
                         <i class='fas fa-cogs nav_icon fa-2x' data-bs-toggle="tooltip" data-bs-placement="right"
                         title="Administratif"></i>
                         <span class="nav_name">Administratif</span>
-                    </a>
+                    </a> --}}
 
                 </div>
                 <div>
