@@ -27,9 +27,9 @@ class GestionRendezvous extends Component
 
     public function mount()
     {
-        $this->patient_id = session('id'); 
-        $user = Patient::where('id', $this->patient_id)->first();
-        $this->user_id = $user->user_id;
+        $this->user_id = session('id');  
+        $patient = Patient::where('user_id', $this->user_id)->first(); 
+        $this->patient_id = $patient->user_id;
 
     }
     public function close_modal()
