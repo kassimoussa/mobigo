@@ -1,5 +1,10 @@
+@php
+use Carbon\Carbon;
+@endphp
+
+
 <div>
-    
+
     <div class="d-flex justify-content-end mb-3 ">
 
         {{-- <div class="col-10 d-flex justify-content-start">
@@ -22,7 +27,7 @@
 
 
     <div class="modal fade" id="newrdv" data-bs-keyboard="true" tabindex="-1" aria-hidden="true" wire:ignore.self>
-        <div class="modal-dialog modal-xl " role="document">
+        <div class="modal-dialog modal-lg " role="document">
             <div class="modal-content">
                 <form wire:submit="store">
                     <div class="modal-header d-flex justify-content-between">
@@ -55,26 +60,19 @@
                                         @enderror
                                     </div>
 
-                                    <div class="mt-2 col-12 ">
-                                        <label for="specialite"
-                                            class="form-label text-muted fw-italic mb-0">Spécialité
+                                    <div class="my-2 col-12 ">
+                                        <label for="specialite" class="form-label text-muted fw-italic mb-0">Spécialité
                                             *</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text txt fw-bold  text-white">
-                                                <i class="fa-solid fa-building icnbgc"></i>
-                                            </span>
-                                            <select wire:model.defer="specialite" class="form-select"
-                                                id="specialite">
-                                                <option value="" selected>Select</option>
-                                                <option value="Généraliste">Généraliste </option>
-                                                <option value="Cardilogie">Cardilogie </option>
-                                                <option value="Endocrinologie">Endocrinologie </option>
-                                                <option value=" Gastro-entérologie"> Gastro-entérologie </option>
-                                                <option value="Néphrologie">Néphrologie </option>
-                                                <option value="Neurologie">Neurologie </option>
-                                                <option value="pneumologie">pneumologie </option>
-                                            </select>
-                                        </div>
+                                        <select wire:model.defer="specialite" class="form-select" id="specialite">
+                                            <option value="" selected>Select</option>
+                                            <option value="Généraliste">Généraliste </option>
+                                            <option value="Cardilogie">Cardilogie </option>
+                                            <option value="Endocrinologie">Endocrinologie </option>
+                                            <option value=" Gastro-entérologie"> Gastro-entérologie </option>
+                                            <option value="Néphrologie">Néphrologie </option>
+                                            <option value="Neurologie">Neurologie </option>
+                                            <option value="pneumologie">pneumologie </option>
+                                        </select>
                                         <span class="text-danger">
                                             @error('specialite')
                                                 {{ $message }}
@@ -106,8 +104,8 @@
 
     <div class="col ">
 
-        <table class="table table-bordered border-dark table-striped table-hover table-sm align-middle "
-            id="" {{-- wire:poll --}}>
+        <table class="table table-bordered border-dark table-striped table-hover table-sm align-middle " id=""
+            {{-- wire:poll --}}>
             <thead class="bg-dark text-white text-center">
                 <th scope="col">#</th>
                 {{-- <th scope="col">Photo</th> --}}
@@ -125,27 +123,26 @@
                         $delmodal = 'delete' . $cnt;
                     @endphp
 
-                    @foreach ($rdvs as $key => $rdv) 
-                    @php
-                        if ($rdv->status == Null) {
-                            $status = 'En attente';
-                            $color = "warning";
-                        } else {
-                            $status = $rdv->status;
-                            $color = "success";
-                        }
-                    @endphp
+                    @foreach ($rdvs as $key => $rdv)
+                        @php
+                            if ($rdv->status == null) {
+                                $status = 'En attente';
+                                $color = 'warning';
+                            } else {
+                                $status = $rdv->status;
+                                $color = 'success';
+                            }
+                        @endphp
                         <tr>
                             <td>{{ $cnt }}</td>
                             {{-- <td><img style="width: 60px; height: 60px; oject-fit: cover;" src="{{ asset($photo) }}"
                             alt="Photo du patient"> </td> --}}
-                            <td>{{ $rdv->date }}</td>
+                            <td>{{ Carbon::parse($rdv->date)->format('d/m/Y') }}</td>
                             <td>{{ $rdv->specialite }}</td>
-                            <td>{{ $rdv->motif }}</td> 
-                            <td><span class="badge text-bg-{{ $color }}">{{ $status }}</span></td> 
+                            <td>{{ $rdv->motif }}</td>
+                            <td><span class="badge text-bg-{{ $color }}">{{ $status }}</span></td>
                             <td class="td-actions ">
-                                <a class="btn  " 
-                                    title="Voir">
+                                <a class="btn  " title="Voir">
                                     <i class="fas fa-eye"></i>
                                 </a>
                             </td>

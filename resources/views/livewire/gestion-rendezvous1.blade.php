@@ -1,7 +1,11 @@
+@php
+use Carbon\Carbon;
+@endphp
+
 <div>
     
     <div class="modal fade" id="edit" data-bs-keyboard="true" tabindex="-1" aria-hidden="true" wire:ignore.self>
-        <div class="modal-dialog modal-xl " role="document">
+        <div class="modal-dialog modal-lg " role="document">
             <div class="modal-content">
                 <form wire:submit="update">
                     <div class="modal-header d-flex justify-content-between">
@@ -107,7 +111,7 @@
                             <td>{{ $rdv->user->nom }}</td>
                             <td>{{ $rdv->specialite }}</td>
                             <td>{{ $rdv->motif }}</td> 
-                            <td>{{ $rdv->date }}</td>
+                            <td>{{ Carbon::parse($rdv->date)->format('d/m/Y') }}</td>
                             <td><span class="badge text-bg-{{ $color }}">{{ $status }}</span></td> 
                             <td class="td-actions ">
                                 <a class="btn  " data-bs-toggle="modal" data-bs-target="#edit"

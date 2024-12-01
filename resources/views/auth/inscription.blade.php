@@ -213,7 +213,7 @@
                                 </div>
                                 
 
-                                <div class="mt-3 col-6 ">
+                                <div class="mt-3 col-3 ">
                                     <label for="password" class="form-label text-muted fw-italic mb-0">Mot de passe </label>
                                     <div class="input-group">
                                         <span class="input-group-text txt fw-bold  text-white">
@@ -225,6 +225,26 @@
                                     </div>
                                     <span class="text-danger">
                                         @error('password')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                </div>
+
+                                
+                                
+
+                                <div class="mt-3 col-3 ">
+                                    <label for="client_id" class="form-label text-muted fw-italic mb-0">Identifiant client </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text txt fw-bold  text-white">
+                                            <i class="fa-solid fa-city icnbgc"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="client_id"
+                                            name="client_id"
+                                            placeholder="Identifiant client" >
+                                    </div>
+                                    <span class="text-danger">
+                                        @error('client_id')
                                             {{ $message }}
                                         @enderror
                                     </span>

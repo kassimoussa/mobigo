@@ -93,22 +93,27 @@ use Carbon\Carbon;
                         title="Médical"></i>
                         <span class="nav_name">Médical</span>
                     </a>
-                    <a href="{{ url('#') }}" class="nav_link  @if($pageSlug == "ecommerce") activee @endif ">
+                    <a href="{{ url('/ecommerce') }}" class="nav_link  @if($pageSlug == "ecommerce") activee @endif ">
                         <i class='fa-solid fa-cart-shopping nav_icon' data-bs-toggle="tooltip" data-bs-placement="right"
                         title="E-commerce"></i>
                         <span class="nav_name">E-commerce</span>
                     </a>
-                    <a href="{{ url('#') }}" class="nav_link  @if($pageSlug == "social") activee @endif ">
+                    <a href="{{ url('/social') }}" class="nav_link  @if($pageSlug == "social") activee @endif ">
                         <i class='fa-solid fa-user-group nav_icon' data-bs-toggle="tooltip"
                         data-bs-placement="right" title="Social"></i>
                         <span class="nav_name">Social</span>
                     </a> 
-                    <a href="{{ url('#') }}" class="nav_link  @if($pageSlug == "trnasport") activee @endif ">
+                    <a href="{{ url('/transport') }}" class="nav_link  @if($pageSlug == "transport") activee @endif ">
                         <i class=' fa-solid fa-van-shuttle nav_icon' data-bs-toggle="tooltip"
                         data-bs-placement="right" title="Transport"></i>
                         <span class="nav_name">Transport</span>
                     </a>  
-                    <a href="{{ url('#') }}" class="nav_link   @if($pageSlug == "administratif") activee @endif ">
+                    <a href="{{ url('/factures') }}" class="nav_link  @if($pageSlug == "factures") activee @endif ">
+                        <i class=' fa-solid fa-file-invoice-dollar nav_icon' data-bs-toggle="tooltip"
+                        data-bs-placement="right" title="Factures"></i>
+                        <span class="nav_name">Factures</span>
+                    </a>  
+                    <a href="{{ url('/administratif') }}" class="nav_link   @if($pageSlug == "administratif") activee @endif ">
                         <i class='fas fa-cogs nav_icon fa-2x' data-bs-toggle="tooltip" data-bs-placement="right"
                         title="Administratif"></i>
                         <span class="nav_name">Administratif</span>

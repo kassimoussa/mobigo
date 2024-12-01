@@ -19,6 +19,7 @@ class PatientController extends Controller
             "telephone" => 'required', 
             "email" => 'required', 
             "password" => 'required', 
+            "client_id" => 'required', 
             "adresse" => 'required', 
         ]);
 
@@ -33,6 +34,7 @@ class PatientController extends Controller
             $newuser->telephone = $request->telephone;  
             $newuser->email = $request->email; 
             $newuser->password = $request->password; 
+            $newuser->client_id = $request->client_id; 
             $newuser->level = '2';  
             $query1 =  $newuser->save();
 
@@ -52,10 +54,5 @@ class PatientController extends Controller
         }
     }
 
-    public function medical(){
-        return view("2.medical.index");
-    }
-    public function rendezvous(){
-        return view("2.medical.rendezvous");
-    }
+    
 }
