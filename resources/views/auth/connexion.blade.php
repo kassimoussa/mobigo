@@ -43,7 +43,7 @@
 
                     <div class="card-body">
                         <div class="text-center mb-4">
-                            <img src="{{ asset('images/') }}" alt="Logo" height="150">
+                            <img src="{{ asset('images/logomobigo.jpg') }}" alt="Logo" height="150">
                         </div>
                         <form action="{{ url('login') }}" method="POST">
                             @csrf
