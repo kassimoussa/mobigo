@@ -9,7 +9,10 @@
     <title>Connexion | MOBIGO</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script> 
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
 
     <style>
         html,
@@ -32,11 +35,21 @@
 
     <div class="container  mt-5">
         <div class="row justify-content-center ">
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-6 col-lg-5">
                 <livewire:login />
             </div>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('alert', event => {
+                toastr[event.detail.type](event.detail.message,
+                    event.detail.title ?? ''), toastr.options = {
+                    "closeButton": true,
+                    "progressBar": true,
+                }
+            });
+    </script>
 
 </body>
 
