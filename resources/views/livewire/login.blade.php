@@ -44,41 +44,41 @@
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-primary fw-bold ">SE CONNECTER </button>
                     </div>
-                    <div class="text-center mb-1">
+                    <div class="text-center my-3">
                         <a href="/inscription">S'incrire</a>
                     </div>
                 </form>
             @endif
             @if ($step === 2)
-    <form wire:submit.prevent="sendNotif">
-        <div class="mb-3">
-            <div class="input-group">
-                <span class="input-group-text txt fw-bold bg-primary text-white">
-                    <i class="fas fa-user "></i>
-                </span>
-                <input type="text" class="form-control" wire:model="client_id"
-                    placeholder="Tapez votre identifiant client " required>
-            </div>
-            <span class="text-danger">
-                @error('client_id')
-                    {{ $message }}
-                @enderror
-            </span>
-        </div>
-        <div class="d-grid gap-4">
-            <button type="submit" class="btn btn-primary fw-bold">SE CONNECTER</button>
-        </div>
+                <form wire:submit.prevent="sendNotif">
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text txt fw-bold bg-primary text-white">
+                                <i class="fas fa-user "></i>
+                            </span>
+                            <input type="text" class="form-control" wire:model="client_id"
+                                placeholder="Tapez votre identifiant client " required>
+                        </div>
+                        <span class="text-danger">
+                            @error('client_id')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="d-grid gap-4">
+                        <button type="submit" class="btn btn-primary fw-bold">SE CONNECTER</button>
+                    </div>
 
-        @if ($isChecking)
-            <div wire:poll.3s="authenticateClientId" class="alert alert-warning mt-3 text-center">
-                Vérification en cours... <br>
-                <div class="spinner-border" role="status">
-                    <span class="sr-only">Chargement...</span>
-                </div>
-            </div>
-        @endif
-    </form>
-@endif
+                    @if ($isChecking)
+                        <div wire:poll.3s="authenticateClientId" class="alert alert-warning mt-3 text-center">
+                            Vérification en cours... <br>
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Chargement...</span>
+                            </div>
+                        </div>
+                    @endif
+                </form>
+            @endif
         </div>
     </div>
 </div>
