@@ -13,7 +13,7 @@ class HomeController extends Controller
         if ($request->session()->has('id')) {
             return redirect('index');
         } else {
-            return view('auth.connexion');
+            return view('auth.loginid');
         }
     }
 
